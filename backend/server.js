@@ -43,7 +43,7 @@ app.use("/api", analyticsRoutes);
 app.use("/api", settlementRoutes);
 
 // Root route
-app.get("/", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.send("Room Expense Manager API is running 🚀");
 });
 
