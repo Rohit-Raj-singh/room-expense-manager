@@ -18,9 +18,7 @@ const { initSocket } = require("./socket");
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 
-app.get("/", (req, res) => {
-  res.send("Room Expense Manager API is running 🚀");
-});
+
 
 const app = express();
 app.disable("x-powered-by");
@@ -43,6 +41,15 @@ app.use("/api", expenseRoutes);
 app.use("/api", balanceRoutes);
 app.use("/api", analyticsRoutes);
 app.use("/api", settlementRoutes);
+
+// Root route
+app.get("/", (req, res) => {
+  res.send("Room Expense Manager API is running 🚀");
+});
+
+// Healthcheck
+app.get("/health", (req, res) => res.json({ ok: true }));
+
 
 // Serve frontend if built assets are present (optional; for separate deployments this can be skipped)
 const frontendDistDir = path.join(__dirname, "..", "frontend", "app", "dist");
