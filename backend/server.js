@@ -18,6 +18,10 @@ const { initSocket } = require("./socket");
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 
+app.get("/", (req, res) => {
+  res.send("Room Expense Manager API is running 🚀");
+});
+
 const app = express();
 app.disable("x-powered-by");
 
