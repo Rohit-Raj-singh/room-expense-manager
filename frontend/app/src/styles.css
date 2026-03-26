@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+.bg-app {
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(99, 102, 241, 0.18), transparent 60%),
+    radial-gradient(900px 400px at 80% 20%, rgba(34, 197, 94, 0.12), transparent 55%),
+    linear-gradient(180deg, rgb(2 6 23), rgb(3 7 18));
+}
+
